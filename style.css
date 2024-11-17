@@ -1,25 +1,18 @@
 .anatomy_container {
-  position: relative;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  width: 100%;
-
-  max-width: 2000px;
-  min-width: 200px;
-  min-height: 10rem;
-
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 2000px;
+  min-width: 200px;
 }
-
 .images_wrapper {
   position: relative;
-  width: 100%;
-  display: flex;
-  animation: scale_in 0.5s ease-in;
+  width: 95%;
+  /* animation: scale_in 0.5s ease-in; */
 }
 
 @keyframes scale_in {
@@ -29,31 +22,7 @@
   }
 }
 
-.bubbles {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-  pointer-events: none;
-}
-
-.left_bubbles {
-  opacity: 0;
-  transform: translateX(-1rem);
-}
-
-.right_bubbles {
-  opacity: 0;
-  transform: translateY(-1rem);
-}
-
-.hovered {
-  opacity: 1;
-  transform: translateX(0rem);
-  transition: all 0.5s;
-}
-
-.tramvay {
+.map_layer {
   position: absolute;
   width: 100%;
   left: 0;
@@ -61,28 +30,164 @@
   filter: saturate(0%);
   transition: filter 1s ease;
 }
+
 .bg_layer {
   position: relative;
-  width: 100%;
-  left: 0;
-  top: 0;
   pointer-events: none;
-}
-
-.hover_wrapper {
-  position: absolute;
   width: 100%;
-  height: 30%;
-  opacity: 0.1;
-  top: 34%;
 }
 
-.tram_hovered {
+/* DETAILS */
+
+.square {
+  position: absolute;
+  top: 19.9%;
+  left: 1%;
+  width: 10.7%;
+
+  display: flex;
+  flex-direction: row;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+.square img {
+  position: relative;
+  width: 100%;
+}
+
+.square_words {
+  position: absolute;
+
+  top: 19.9%;
+  left: 11.7%;
+  width: 5%;
+
+  transform: translateX(-10px);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+.square_words img {
+  position: relative;
+  width: 100%;
+}
+
+.out_pic {
+  position: absolute;
+
+  top: 25.2%;
+  left: 0.8%;
+  width: 22%;
+  /* display: none; */
+  transform: translateX(10px);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+.out_pic img {
+  position: relative;
+  width: 100%;
+}
+
+.besedka {
+  position: absolute;
+
+  top: 59.5%;
+  left: 2.3%;
+  width: 23.9%;
+  /* display: none; */
+  transform: translateX(10px);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+}
+.besedka img {
+  position: relative;
+  width: 100%;
+}
+
+.church {
+  position: absolute;
+
+  top: 77.7%;
+  left: 19.1%;
+  width: 15%;
+  /* display: none; */
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+}
+.church img {
+  position: relative;
+  width: 100%;
+}
+
+/* HOVERS */
+
+.main_square_hover {
+  position: absolute;
+
+  width: 60%;
+  height: 62%;
+  top: 22%;
+  left: 0;
+}
+
+.out_pic_hover {
+  position: absolute;
+  width: 10%;
+  height: 7%;
+  top: 29%;
+  left: 19.5%;
+}
+
+.besedka_hover {
+  position: absolute;
+  border-radius: 100%;
+
+  width: 10%;
+  height: 7%;
+
+  top: 61%;
+  left: 23.5%;
+}
+.church_hover {
+  position: absolute;
+  width: 10%;
+  height: 5%;
+  top: 74%;
+  left: 19%;
+}
+
+/* HOVERED */
+
+.bg_hovered {
   filter: saturate(100%);
 }
 
+.square_activate {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.out_pic_hovered {
+  transform: translateX(0px);
+  opacity: 1;
+}
+.besedka_hovered {
+  transform: translateX(0px);
+  opacity: 1;
+}
+.church_hovered {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+/* SPINNER */
 .spinner {
-  display: flex;
+  /* display: flex; */
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -94,7 +199,6 @@
   animation: animation_hat 2s ease-in infinite;
   animation-direction: alternate;
 }
-
 @keyframes animation_hat {
   0% {
     transform: translateY(-0.1rem);
