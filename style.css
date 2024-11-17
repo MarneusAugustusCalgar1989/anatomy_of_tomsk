@@ -1,0 +1,153 @@
+.anatomy_container {
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+
+  max-width: 2000px;
+  min-width: 200px;
+  min-height: 10rem;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.images_wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  animation: scale_in 0.5s ease-in;
+}
+
+@keyframes scale_in {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.bubbles {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.left_bubbles {
+  opacity: 0;
+  transform: translateX(-1rem);
+}
+
+.right_bubbles {
+  opacity: 0;
+  transform: translateY(-1rem);
+}
+
+.hovered {
+  opacity: 1;
+  transform: translateX(0rem);
+  transition: all 0.5s;
+}
+
+.tramvay {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  filter: saturate(0%);
+  transition: filter 1s ease;
+}
+.bg_layer {
+  position: relative;
+  width: 100%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.hover_wrapper {
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  opacity: 0.1;
+  top: 34%;
+}
+
+.tram_hovered {
+  filter: saturate(100%);
+}
+
+.spinner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+
+.spinner_hat {
+  position: absolute;
+  animation: animation_hat 2s ease-in infinite;
+  animation-direction: alternate;
+}
+
+@keyframes animation_hat {
+  0% {
+    transform: translateY(-0.1rem);
+  }
+  50% {
+    transform: translateY(0.1rem);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
+}
+
+.spinner_must {
+  animation: must_anim 1s ease-in infinite;
+
+  transform-origin: 50% 95%;
+}
+
+@keyframes must_anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner_up {
+  animation: spinner_up 1s;
+}
+.spinner_down {
+  animation: spinner_down 1s;
+}
+@keyframes spinner_up {
+  to {
+    transform: translateY(-2rem);
+    opacity: 0;
+  }
+}
+
+@keyframes spinner_down {
+  to {
+    transform: translateY(2rem);
+    opacity: 0;
+  }
+}
