@@ -1,24 +1,18 @@
 .anatomy_container {
-  position: relative;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  width: 100%;
-
-  max-width: 2000px;
-  min-width: 200px;
-  min-height: 10rem;
-
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 2000px;
+  min-width: 200px;
 }
 
 .images_wrapper {
   position: relative;
   width: 100%;
-  display: flex;
   animation: scale_in 0.5s ease-in;
 }
 
@@ -28,7 +22,6 @@
     opacity: 0;
   }
 }
-
 .bubbles {
   position: absolute;
   width: 100%;
@@ -61,6 +54,10 @@
   filter: saturate(0%);
   transition: filter 1s ease;
 }
+
+.lake_hovered {
+  filter: saturate(100%);
+}
 .bg_layer {
   position: relative;
   width: 100%;
@@ -69,16 +66,90 @@
   pointer-events: none;
 }
 
-.hover_wrapper {
+.big_hover_block {
   position: absolute;
-  width: 100%;
+  width: 85%;
   height: 30%;
-  opacity: 0.1;
-  top: 34%;
+  /* border: 1px solid peru; */
+  top: 28%;
+  left: 8%;
+  border-radius: 100%;
 }
 
-.tram_hovered {
-  filter: saturate(100%);
+.top_hover_block {
+  position: absolute;
+  width: 40%;
+  height: 5%;
+  /* border: 1px solid red; */
+  top: 27%;
+  left: 40%;
+}
+
+.lake_hover_block {
+  position: absolute;
+  width: 45%;
+  height: 17%;
+  /* border: 1px solid blue; */
+  top: 33%;
+  left: 28%;
+  border-radius: 100%;
+}
+
+.right_hover_block {
+  position: absolute;
+  width: 19%;
+  height: 7%;
+  /* border: 1px solid pink; */
+  top: 43.5%;
+  left: 75%;
+}
+.bottom_hover_block {
+  position: absolute;
+  width: 22%;
+  height: 7%;
+  /* border: 1px solid palegreen; */
+  top: 51%;
+  left: 62.5%;
+}
+
+.ultra_bottom_hover_block {
+  position: absolute;
+  width: 26%;
+  height: 7%;
+  /* border: 1px solid palevioletred; */
+  top: 51%;
+  left: 36%;
+}
+
+.krest {
+  opacity: 0;
+  transition: all 1s;
+}
+
+.krest_hovered {
+  opacity: 1;
+}
+
+.top_bubbles {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s;
+}
+
+.top_bubbles_hovered {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.bottom_bubbles {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.5s;
+}
+
+.bottom_bubbles_hovered {
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 .spinner {
@@ -94,7 +165,6 @@
   animation: animation_hat 2s ease-in infinite;
   animation-direction: alternate;
 }
-
 @keyframes animation_hat {
   0% {
     transform: translateY(-0.1rem);
