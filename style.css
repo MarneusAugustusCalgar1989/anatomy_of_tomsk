@@ -1,88 +1,203 @@
 .anatomy_container {
-  position: relative;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  width: 100%;
-
-  max-width: 2000px;
-  min-width: 200px;
-  min-height: 10rem;
-
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  width: 100%;
+  max-width: 1910px;
+  min-width: 200px;
 }
-
 .images_wrapper {
   position: relative;
   width: 100%;
-  display: flex;
   animation: scale_in 0.5s ease-in;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform-origin: 50% 0%;
+  animation: scale_in 1s;
 }
 
-@keyframes scale_in {
-  from {
-    transform: scale(0);
-    opacity: 0;
-  }
+.images_wrapper * {
+  transition: all 1s;
 }
 
-.bubbles {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-  pointer-events: none;
-}
-
-.left_bubbles {
-  opacity: 0;
-  transform: translateX(-1rem);
-}
-
-.right_bubbles {
-  opacity: 0;
-  transform: translateY(-1rem);
-}
-
-.hovered {
-  opacity: 1;
-  transform: translateX(0rem);
-  transition: all 0.5s;
-}
-
-.tramvay {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-  filter: saturate(0%);
-  transition: filter 1s ease;
-}
-.bg_layer {
+.main_bg {
   position: relative;
   width: 100%;
+  filter: saturate(0%);
+  /* transition: filter 1s; */
+}
+
+.assets {
+  position: absolute;
+}
+.main_header {
+  width: 50.6%;
+  top: 6.1%;
+  left: 1.2%;
+  transform: translateY(-2rem);
+  opacity: 0;
+}
+
+.second_header {
+  width: 46.9%;
+  top: 9.38%;
+  left: 1.08%;
+  transform: translateX(-2rem);
+  opacity: 0;
+}
+
+.right_calc {
+  width: 25.3%;
+  top: 9.6%;
+  right: 1.1%;
+  transform: translateX(2rem);
+  opacity: 0;
+}
+
+.main_map {
+  width: 97.8%;
+  left: 1%;
+  top: 15.05%;
+  filter: saturate(0%);
+}
+
+.mech_n_descr {
+  width: 85%;
+  top: 8%;
+  left: 10.3%;
+  transform: translateY(2rem);
+  opacity: 0;
+}
+
+.map_descr {
+  width: 24%;
+  left: 1%;
+  top: 15.5%;
+  transform: translateX(2rem);
+  opacity: 0;
+}
+
+.left_tree {
+  width: 18%;
+  top: 21%;
+  left: 0.5%;
+  transform: translateX(-2rem);
+  opacity: 0;
+}
+
+.urna {
+  width: 16.7%;
+  top: 39.2%;
+  right: 0%;
+  transform: translateX(2rem);
+  opacity: 0;
+}
+
+.rulon_n_words {
+  width: 97.4%;
+  left: 1%;
+  top: 49.95%;
+  transform: translateY(2rem);
+  opacity: 0;
+}
+
+.third_header {
+  width: 24.1%;
+  left: 1%;
+  top: 68.1%;
+  transform: translateY(2rem);
+  opacity: 0;
+}
+
+.battery_n_text {
+  width: 15.9%;
+  bottom: 17.8%;
+  left: 1%;
+  transform: translateX(-2rem);
+  opacity: 0;
+}
+
+.playground_n_text {
+  width: 27.9%;
+  bottom: 0.8%;
+  left: 0.9%;
+  transform: translateY(-2rem);
+  opacity: 0;
+}
+
+.trees_n_text {
+  width: 16%;
+  right: 22.1%;
+  bottom: 25.3%;
+  transform: translateY(-2rem);
+  opacity: 0;
+}
+.lights_n_text {
+  width: 19.2%;
+  right: 4.5%;
+  bottom: 23.3%;
+  transform: translateX(2rem);
+  opacity: 0;
+}
+.maf_n_urns {
+  width: 24.2%;
+  right: 0.9%;
+  bottom: 2.6%;
+  transform: translateX(-2rem);
+  opacity: 0;
+}
+
+.bottom_playgr {
+  width: 85.1%;
+  left: 11.9%;
+  bottom: 2.04%;
+  transform: translateY(-2rem);
+  opacity: 0;
+}
+
+/* HOVERS */
+.top_hover {
+  width: 99%;
+  height: 14%;
   left: 0;
   top: 0;
-  pointer-events: none;
 }
 
-.hover_wrapper {
-  position: absolute;
-  width: 100%;
-  height: 30%;
-  opacity: 0.1;
-  top: 34%;
+.map_hover {
+  width: 97.7%;
+  height: 38.8%;
+  top: 15%;
+  left: 1%;
+}
+.rulon_hover {
+  top: 55%;
+  width: 99%;
+  height: 12%;
+}
+.bottom_hover {
+  border-radius: 50%;
+  opacity: 0.7;
+  width: 57%;
+  height: 25%;
+  top: 74%;
+  transform: rotate(-30deg);
 }
 
-.tram_hovered {
-  filter: saturate(100%);
-}
+/* ANIMATIONS */
 
+.to_screen {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+/* SPINNER */
 .spinner {
-  display: flex;
+  /* display: flex; */
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -94,7 +209,6 @@
   animation: animation_hat 2s ease-in infinite;
   animation-direction: alternate;
 }
-
 @keyframes animation_hat {
   0% {
     transform: translateY(-0.1rem);
