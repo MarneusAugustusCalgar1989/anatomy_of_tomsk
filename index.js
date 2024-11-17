@@ -1,16 +1,63 @@
-const imageWrapper = document.querySelector('.images_wrapper')
-const bgImage = document.querySelector('.bg_layer')
-const tram = document.querySelector('.tramvay')
-const leftBubbles = document.querySelector('.left_bubbles')
-const rightBubbles = document.querySelector('.right_bubbles')
-const hoverWrapper = document.querySelector('.hover_wrapper')
+const mainContainer = document.querySelector('.anatomy_container')
+const beginContainer = document.querySelector('.begin')
+const endContainer = document.querySelector('.end')
+const infoAncor = document.querySelector('.info_ancor')
+const endInfoAncor = document.querySelector('.end_info_ancor')
+const beginHover = document.querySelector('.begin_hover')
+const beginAsset = document.querySelector('.asset')
+
+const endHover = document.querySelector('.end_hover')
+const endAsset_1 = document.querySelector('.end_asset_1')
+const endAsset_2 = document.querySelector('.end_asset_2')
+const endAsset_3 = document.querySelector('.end_asset_3')
+
 const spinner = document.querySelector('.spinner')
 
-imageWrapper.style.display = 'none'
+const infoStart = () => {
+  beginContainer.onmouseleave = () => {
+    if (beginAsset.classList.value.includes('fade_in')) {
+      beginAsset.classList.remove('fade_in')
+    }
+    infoAncor.style.filter = 'saturate(0%)'
+  }
+
+  endContainer.onmouseleave = () => {
+    endInfoAncor.style.filter = 'saturate(0%)'
+    imagesArr = endContainer.querySelectorAll('img')
+    imagesArr.forEach((el) => {
+      if (el.classList.value.includes('fade_in')) {
+        el.classList.remove('fade_in')
+      }
+    })
+  }
+
+  beginHover.onmouseover = () => {
+    beginAsset.classList.add('fade_in')
+    infoAncor.style.filter = 'saturate(100%)'
+  }
+
+  endHover.onmouseover = () => {
+    endAsset_1.classList.add('fade_in')
+    endInfoAncor.style.filter = 'saturate(100%)'
+  }
+
+  endAsset_1.onmouseover = () => {
+    endAsset_2.classList.add('fade_in')
+    setTimeout(() => {
+      endAsset_3.classList.add('fade_in')
+    }, 300)
+  }
+}
+
+// ONLOADING
+
+beginContainer.style.display = 'none'
+endContainer.style.display = 'none'
+
 spinner.style.display = 'block'
 
 let loadState = []
-const imagesInWrapper = imageWrapper.querySelectorAll('img')
+const imagesInWrapper = mainContainer.querySelectorAll('img')
 
 const checkLoadState = () => {
   if (loadState.length == imagesInWrapper.length) {
@@ -18,7 +65,10 @@ const checkLoadState = () => {
     document.querySelector('.spinner_must').classList.add('spinner_down')
     setTimeout(() => {
       spinner.style.display = 'none'
-      imageWrapper.style.display = 'block'
+      beginContainer.style.display = 'flex'
+      endContainer.style.display = 'flex'
+
+      infoStart()
     }, 1000)
   }
 }
@@ -29,15 +79,3 @@ imagesInWrapper.forEach((el) => {
     checkLoadState()
   }
 })
-
-hoverWrapper.onmouseover = () => {
-  leftBubbles.classList.add('hovered')
-  rightBubbles.classList.add('hovered')
-  tram.classList.add('tram_hovered')
-}
-
-hoverWrapper.onmouseleave = () => {
-  leftBubbles.classList.remove('hovered')
-  rightBubbles.classList.remove('hovered')
-  tram.classList.remove('tram_hovered')
-}
