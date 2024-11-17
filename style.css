@@ -1,25 +1,24 @@
 .anatomy_container {
-  position: relative;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  width: 100%;
-
-  max-width: 2000px;
-  min-width: 200px;
-  min-height: 10rem;
-
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 2000px;
+  min-width: 200px;
 }
-
 .images_wrapper {
   position: relative;
   width: 100%;
-  display: flex;
   animation: scale_in 0.5s ease-in;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform-origin: 50% 0%;
+  animation: scale_in 1s;
 }
 
 @keyframes scale_in {
@@ -29,60 +28,147 @@
   }
 }
 
-.bubbles {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-  pointer-events: none;
+.images_wrapper * {
+  transition: all 1s;
 }
 
-.left_bubbles {
-  opacity: 0;
-  transform: translateX(-1rem);
-}
-
-.right_bubbles {
-  opacity: 0;
-  transform: translateY(-1rem);
-}
-
-.hovered {
-  opacity: 1;
-  transform: translateX(0rem);
-  transition: all 0.5s;
-}
-
-.tramvay {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
-  filter: saturate(0%);
-  transition: filter 1s ease;
-}
-.bg_layer {
+.main_bg {
   position: relative;
-  width: 100%;
-  left: 0;
-  top: 0;
-  pointer-events: none;
+  width: 99%;
+  filter: saturate(0%);
 }
 
-.hover_wrapper {
+.gold_triangle {
   position: absolute;
-  width: 100%;
-  height: 30%;
-  opacity: 0.1;
-  top: 34%;
+  left: 5.3%;
+  top: 9.7%;
+  width: 35.2%;
+  transform: translateY(-2rem);
+  opacity: 0;
+}
+.header_text {
+  position: absolute;
+  left: 5.45%;
+  top: 9.8%;
+  width: 35%;
+  transform: translateX(-2rem);
+  opacity: 0;
 }
 
-.tram_hovered {
-  filter: saturate(100%);
+.top_photo {
+  position: absolute;
+  left: 31.9%;
+  top: 9.09%;
+  width: 48%;
+  transform: translateY(-2rem);
+  opacity: 0;
+  mix-blend-mode: multiply;
 }
 
+.top_right_map {
+  position: absolute;
+  left: 78.5%;
+  top: 9.65%;
+  width: 19.6%;
+  transform: translateY(-2rem);
+  opacity: 0;
+}
+.right_top {
+  position: absolute;
+  right: 1.6%;
+  top: 27.2%;
+  width: 17.2%;
+  transform: translateX(2rem);
+  opacity: 0;
+}
+.right_centre {
+  position: absolute;
+  top: 45.1%;
+  right: 1.1%;
+  width: 20.3%;
+  transform: translateX(2rem);
+  opacity: 0;
+}
+
+.soldier_side {
+  position: absolute;
+  top: 62.9%;
+  right: 1.5%;
+  width: 32.3%;
+  transform: translateX(2rem);
+  opacity: 0;
+}
+.bottom {
+  position: absolute;
+  bottom: 0.5%;
+  left: 23.5%;
+  width: 43%;
+  transform: translateY(-2rem);
+  opacity: 0;
+}
+
+.left_bottom {
+  position: absolute;
+  bottom: 16.6%;
+  left: 1.4%;
+  width: 39.5%;
+  transform: translateX(-2rem);
+  opacity: 0;
+}
+.left_top {
+  position: absolute;
+  top: 22%;
+  left: 5.7%;
+  width: 19.2%;
+  transform: translateX(-2rem);
+  opacity: 0;
+  mix-blend-mode: multiply;
+}
+.main_map {
+  position: absolute;
+  top: 25.2%;
+  left: 5.1%;
+  width: 74.5%;
+  filter: saturate(0%);
+}
+.map_legend {
+  position: absolute;
+  top: 0;
+  left: 0.5;
+  width: 99%;
+  transform: translatey(2rem);
+  opacity: 0;
+}
+
+/* HOVERS */
+
+.left_side_hover {
+  position: absolute;
+  top: 28%;
+  left: 8%;
+  width: 40%;
+  height: 60%;
+  opacity: 0.5;
+}
+.right_side_hover {
+  position: absolute;
+  top: 28%;
+  left: 48%;
+  width: 40%;
+  height: 60%;
+  opacity: 0.5;
+}
+
+/* ANIMATIONS */
+.to_screen {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+/* SPINNER */
 .spinner {
-  display: flex;
+  /* display: flex; */
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -94,7 +180,6 @@
   animation: animation_hat 2s ease-in infinite;
   animation-direction: alternate;
 }
-
 @keyframes animation_hat {
   0% {
     transform: translateY(-0.1rem);
