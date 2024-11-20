@@ -1,36 +1,239 @@
 .anatomy_container {
-  position: relative;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  width: 100%;
-
-  max-width: 2000px;
-  min-width: 200px;
-  min-height: 10rem;
-
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  width: 100%;
+  max-width: 1910px;
+  min-width: 200px;
 }
-
 .images_wrapper {
   position: relative;
   width: 100%;
-  display: flex;
   animation: scale_in 0.5s ease-in;
-}
-
-@keyframes scale_in {
-  from {
-    transform: scale(0);
-    opacity: 0;
-  }
-}
-
-.spinner {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform-origin: 50% 0%;
+  animation: scale_in 1s;
+}
+
+.images_wrapper * {
+  transition: all 1s;
+}
+
+.main_bg {
+  position: relative;
+  width: 100%;
+  filter: saturate(0%);
+  /* transition: filter 1s; */
+}
+
+.assets {
+  position: absolute;
+}
+.header_1 {
+  position: absolute;
+  top: 6.1%;
+  left: 1.3%;
+  width: 28%;
+  transform: translateY(-2rem);
+  opacity: 0;
+}
+
+.header_2 {
+  position: absolute;
+  top: 9.1%;
+  left: 1.1%;
+  width: 36.9%;
+  transform: translateX(-2rem);
+  opacity: 0;
+}
+.kuhterin {
+  position: absolute;
+  top: 9.47%;
+  right: 29.2%;
+  width: 28%;
+  transform: translateY(-2rem);
+  opacity: 0;
+}
+
+.ligin {
+  position: absolute;
+  top: 9.5%;
+  right: 0.4%;
+  width: 27.5%;
+  transform: translateX(2rem);
+  opacity: 0;
+}
+
+.main_house {
+  position: absolute;
+  top: 12.51%;
+  left: 0;
+  width: 100%;
+  filter: saturate(0%);
+}
+.mh_blueprint {
+  position: absolute;
+  top: 12.51%;
+  left: 0;
+  width: 100%;
+  display: none;
+  transition: none;
+}
+
+.profile_left {
+  position: absolute;
+  top: 17.3%;
+  left: 1%;
+  width: 20.4%;
+  transform: translateX(-2rem);
+  opacity: 0;
+}
+.profile_right {
+  position: absolute;
+  top: 30.33%;
+  right: 1.2%;
+  width: 10.52%;
+  transform: translateX(2rem);
+  opacity: 0;
+}
+.profile_bottom {
+  position: absolute;
+  top: 41.8%;
+  left: 39.6%;
+  width: 35.6%;
+  transform: translateY(-2rem);
+  opacity: 0;
+}
+.bottom_line {
+  position: absolute;
+  top: 44%;
+  left: 38.3%;
+  width: 39.2%;
+  transform: translateY(-2rem);
+  opacity: 0;
+}
+.main_podp {
+  position: absolute;
+  top: 43.7%;
+  left: 13.4%;
+  width: 14.2%;
+}
+.top_view {
+  position: absolute;
+  top: 46.4%;
+  left: 5.9%;
+  width: 37.1%;
+  filter: saturate(0%);
+}
+.top_view_vinos {
+  position: absolute;
+  top: 47.9%;
+  left: 1%;
+  width: 12.8%;
+  transform: translateX(-2rem);
+  opacity: 0;
+}
+.demonstration {
+  position: absolute;
+  top: 46.9%;
+  right: 1.1%;
+  width: 55.8%;
+}
+.timeline {
+  position: absolute;
+  top: 61.2%;
+  left: 0%;
+  width: 100%;
+  transform: translateY(-2rem);
+  opacity: 0;
+}
+.left_bottom {
+  position: absolute;
+  top: 70.88%;
+  left: 1%;
+  width: 49.2%;
+}
+.lantern {
+  position: absolute;
+  top: 69.3%;
+  right: 1%;
+  width: 48.2%;
+  transform: translateX(-2rem);
+  opacity: 0;
+}
+.lantern_vinos {
+  position: absolute;
+  top: 69.4%;
+  right: 5.4%;
+  width: 47.4%;
+  transform: translateY(-2rem);
+  opacity: 0;
+}
+/* HOVERS */
+
+.main_building_hover {
+  position: absolute;
+  top: 14.3%;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  opacity: 0.2;
+}
+.top_view_hover {
+  position: absolute;
+  top: 46%;
+  left: 0;
+  width: 43.1%;
+  height: 17.5%;
+  opacity: 0.3;
+}
+
+.demonstr_hover {
+  position: absolute;
+  top: 46%;
+  left: 43.1%;
+  width: 55%;
+  height: 17.5%;
+  opacity: 0.3;
+}
+.bottom_left_hover {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  width: 51%;
+  height: 30%;
+  opacity: 0.3;
+}
+
+.bottom_right_hover {
+  position: absolute;
+  top: 70%;
+  left: 52%;
+  width: 47%;
+  height: 30%;
+  opacity: 0.3;
+}
+
+/* ANIMATIONS */
+
+.to_screen {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.saturate {
+  filter: saturate(100%);
+}
+/* SPINNER */
+.spinner {
+  /* display: flex; */
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -42,7 +245,6 @@
   animation: animation_hat 2s ease-in infinite;
   animation-direction: alternate;
 }
-
 @keyframes animation_hat {
   0% {
     transform: translateY(-0.1rem);
